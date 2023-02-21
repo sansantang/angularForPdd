@@ -1,10 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header>
-  <app-header></app-header>
+<ul>
+  <li *ngFor="let item of tabs">
+    <a href="#">{{item.title}}</a>
+  </li>
+</ul>
 </header>
 <section>
   <router-outlet></router-outlet>
 </section>
 <footer>
-  <app-footer></app-footer>
+
 </footer>

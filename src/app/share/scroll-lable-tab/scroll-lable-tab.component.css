@@ -1,0 +1,26 @@
+ul,li{
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5px;
+    white-space: nowrap;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+}
+::-webkit-scrollbar{
+    display:none;
+}
+.active{
+    color:red;
+}
+.indicator{
+    background-color: brown;
+    height: 2px;
+    width: 2rem;
+    margin-top: 2px;
+}

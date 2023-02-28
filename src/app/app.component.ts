@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-interface TopMemu {
-  title: string,
-  link?: string
-}
+import { TopMenu } from './Interface/TopMenu';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +8,7 @@ interface TopMemu {
 })
 export class AppComponent {
   title = 'pinduoduo';
-  selectIndex = -1;
-  tabs: TopMemu[] = [{
+  topMenus: TopMenu[] = [{
     title: '热门',
     link: ''
   },
@@ -81,7 +76,7 @@ export class AppComponent {
     title: '家具',
     link: ''
   }];
-  handleSelected(index: number){
-    this.selectIndex = index;
+  handleSelectedTab(topmenu: TopMenu){
+    console.log(topmenu);
   }
 }

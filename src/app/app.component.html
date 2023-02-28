@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header>
 <ul>
-  <li *ngFor="let item of tabs">
-    <a href="#">{{item.title}}</a>
+  <li *ngFor="let item of tabs, let i = index">
+    <a href="#" [class.active]="i === selectIndex" (click)="handleSelected(i)">{{item.title}}</a>
   </li>
 </ul>
 </header>

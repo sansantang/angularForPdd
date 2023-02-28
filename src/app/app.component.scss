@@ -1,6 +1,15 @@
-
-
 ul,li{
     margin: 0 5px;
     display: inline-block;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+}
+::-webkit-scrollbar{
+    display:none;
+}
+.active{
+    color:red;
 }

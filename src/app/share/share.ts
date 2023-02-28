@@ -1,0 +1,1 @@
+export * from './scroll-lable-tab/scroll-lable-tab';

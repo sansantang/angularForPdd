@@ -76,7 +76,11 @@ export class AppComponent {
     title: '家具',
     link: ''
   }];
+  backColor = "red";
   handleSelectedTab(topmenu: TopMenu){
+    const colors =['red','blue','black'];
+    const idx = Math.floor(Math.random()*3);
+    this.backColor = colors[idx];
     console.log(topmenu);
   }
 }

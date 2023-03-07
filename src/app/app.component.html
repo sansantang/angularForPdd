@@ -1,6 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header>
-  <app-scroll-lable-tab [menus]="topMenus" [backColor]="backColor" (tabSelected)="handleSelectedTab($event)"></app-scroll-lable-tab>
+  <app-scroll-lable-tab [menus]="topMenus" [backColor]="backColor" (tabSelected)="handleSelectedTab($event)">
+    <div>Hello</div>
+  </app-scroll-lable-tab>
 </header>
 <section>
   <router-outlet></router-outlet>

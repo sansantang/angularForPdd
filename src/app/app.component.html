@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header>
   <app-scroll-lable-tab [menus]="topMenus" [backColor]="backColor" (tabSelected)="handleSelectedTab($event)">
-    <div>Hello</div>
   </app-scroll-lable-tab>
 </header>
 <section>
+  <app-image-slider [sliders]="imageSliders"></app-image-slider>
   <router-outlet></router-outlet>
 </section>
 <footer>

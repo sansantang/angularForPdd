@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ScrollLableTabComponent, HeaderComponent } from './share/share';
+import { ScrollLableTabComponent, HeaderComponent,ImageSliderComponent } from './share/share';
 
 @NgModule({
   declarations: [ //那些属于本 NgModule 的组件、指令、管道。
-    AppComponent, ScrollLableTabComponent, HeaderComponent
+    AppComponent, ScrollLableTabComponent, HeaderComponent,ImageSliderComponent
   ],
   imports: [      //依赖其他模块
     BrowserModule,

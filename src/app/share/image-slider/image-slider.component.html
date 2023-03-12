@@ -1,0 +1,9 @@
+<!-- #后面是给模板或者dom元素起的引用名字，以便可以在组件类或模板中进行引用 -->
+<div class="container" #imageSlider>
+  <div class="image-slider">
+      <img *ngFor="let slider of sliders" [src]="slider.imgUrl" [alt]="slider.caption">
+  </div>
+  <div class="nav-selection">
+      <span *ngFor="let _ of sliders; let idx=index" class="slide-button"></span>
+  </div>
+</div>

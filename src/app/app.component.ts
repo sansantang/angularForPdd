@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ImageSlider } from './Interface/ImageSlider';
 import { TopMenu } from './Interface/TopMenu';
+import { ImageSliderComponent } from './share/share';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
+  @ViewChild('imageSlider') imgSilder!: ImageSliderComponent;
   title = 'pinduoduo';
   topMenus: TopMenu[] = [{
     title: '热门',
@@ -104,5 +106,9 @@ export class AppComponent {
     const idx = Math.floor(Math.random()*3);
     this.backColor = colors[idx];
     console.log(topmenu);
+  }
+  ngAfterViewInit(): void {
+    console.log(this.imgSilder);
+    
   }
 }

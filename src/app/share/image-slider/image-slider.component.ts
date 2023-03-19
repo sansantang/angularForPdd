@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { ImageSlider } from 'src/app/Interface/ImageSlider';
 
 @Component({
@@ -14,14 +14,19 @@ export class ImageSliderComponent implements OnInit,AfterViewInit {
    */
   //  @ViewChild('container') containerRef: ElementRef;
    @ViewChild('imageSlider', { static: true }) imgSlider!: ElementRef;
+   @ViewChildren('img') imgs!: QueryList<ElementRef>;
    @Input() sliders: ImageSlider[] = [];
-  constructor() { }
+  constructor(private r2:Renderer2) { }
 
   ngOnInit(): void {
     console.log(this.imgSlider)
   }
 
   ngAfterViewInit(): void {
-    console.log(this.imgSlider)
+    // console.log(this.imgSlider)
+    this.imgs.forEach(item => {
+      this.r2.setStyle(item.nativeElement,'height','150px');
+    });
+    
   }
 }

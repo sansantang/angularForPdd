@@ -16,6 +16,8 @@ export class ImageSliderComponent implements OnInit,AfterViewInit {
    @ViewChild('imageSlider', { static: true }) imgSlider!: ElementRef;
    @ViewChildren('img') imgs!: QueryList<ElementRef>;
    @Input() sliders: ImageSlider[] = [];
+   @Input() silderHeight = '150px';
+   @Input() intervalBySecond = 2;
   constructor(private r2:Renderer2) { }
 
   ngOnInit(): void {
@@ -24,9 +26,20 @@ export class ImageSliderComponent implements OnInit,AfterViewInit {
 
   ngAfterViewInit(): void {
     // console.log(this.imgSlider)
-    this.imgs.forEach(item => {
-      this.r2.setStyle(item.nativeElement,'height','150px');
-    });
+    // this.imgs.forEach(item => {
+    //   this.r2.setStyle(item.nativeElement,'height','150px');
+    // });
     
+    let i = 0;
+    setInterval(()=>{
+      this.r2.setProperty(this.imgSlider.nativeElement,
+        'scrollLeft',
+        ((++i % this.sliders.length) * this.imgSlider.nativeElement.scrollWidth)/this.sliders.length);
+    }, this.intervalBySecond * 1000);
   }
+
+  handlerEvent(even: any){
+    console.log(even);
+  }
+
 }

@@ -1,7 +1,7 @@
 import { AfterContentInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ImageSlider } from './Interface/ImageSlider';
 import { TopMenu } from './Interface/TopMenu';
-import { ImageSliderComponent } from './share/share';
+import { ImageSliderComponent } from './shared/share';
 
 @Component({
   selector: 'app-root',

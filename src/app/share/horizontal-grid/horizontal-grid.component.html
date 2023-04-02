@@ -1,0 +1,13 @@
+<!-- 1.普通的属性和事件实现绑定 -->
+<!-- <input type="text" [value]="username" (input)="handuleInput($event)"> -->
+
+<!-- 2.普通双向绑定 表单Form：使用 ngModel -->
+<!-- <input type="text" [(ngModel)]="username"> -->
+
+<!-- 3.（失败了，当前版本不行，本想使用 [(username)]）自定义get, set 方法 -->
+<input type="text" [value]="username" (input)="username">
+
+<span>你好，{{username}}</span>
+
+<!-- 在 Angular v6 中已不推荐把 ngModel 输入属性、ngModelChange 事件与响应式表单指令一起使用，并将在 Angular 的未来版本中删除。 -->
+<!-- <input type="text" [ngModel]="username" (ngModelChange)="handuleInput($event)"> -->

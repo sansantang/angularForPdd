@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./directive-test.component.css']
 })
 export class DirectiveTestComponent {
-  color = '';
+  color = 'red';
   condition = false;
 }

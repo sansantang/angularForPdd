@@ -1,0 +1,37 @@
+<!-- 1.自定义属性指令 -->
+<h2>Pick a highlight color</h2>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHighlight]="color">Highlight me!</p>
+<p [appHighlight]="color" defaultColor="violet">
+  Highlight me too!
+</p>
+<p>Use ngNonBindable to stop evaluation.</p>
+
+<!-- 1.1 不绑定插值 -->
+<p >This should  evaluate: {{ 1 + 1 }}</p>
+<p ngNonBindable>This should not evaluate: {{ 1 + 1 }}</p>
+
+<!-- 2.自定义结构指令 -->
+<div *appUnless="condition" class="unless a">
+(A) 显示这一段是因为condition为false。
+</div>
+
+
+<div *appUnless="!condition" class="unless b">
+(B) 虽然condition是true,  显示这一段是因为appUnless被设置为false。
+</div>
+
+<p>
+The condition = 
+<span [ngClass]="{ 'a': !condition, 'b': condition, 'unless': true }">{{condition}}</span>.
+<button
+  type="button"
+  (click)="condition = !condition"
+  [ngClass] = "{ 'a': condition, 'b': !condition }" >
+  Toggle condition to {{condition ? 'false' : 'true'}}
+</button>
+</p>

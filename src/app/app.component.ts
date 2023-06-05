@@ -1,7 +1,7 @@
 import { AfterContentInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ImageSlider } from './Interface/ImageSlider';
 import { TopMenu } from './Interface/TopMenu';
-import { ImageSliderComponent } from './shared/share';
+import { ImageSliderComponent} from './shared/share';
 
 @Component({
   selector: 'app-root',
@@ -102,6 +102,9 @@ export class AppComponent implements AfterViewInit {
     caption: ''
   }];
   username = 'ss';
+  isSpecial = false;
+  color = '';
+  condition = false;
   handleSelectedTab(topmenu: TopMenu) {
     const colors = ['red', 'blue', 'black'];
     const idx = Math.floor(Math.random() * 3);
@@ -109,7 +112,8 @@ export class AppComponent implements AfterViewInit {
     console.log(topmenu);
   }
   ngAfterViewInit(): void {
-    console.log(this.imgSilder);
+    console.log("ngAfterViewInit:")
+    console.log(this.imgSilder);   
 
   }
 }
